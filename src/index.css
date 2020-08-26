@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+  font-family: 'Arvo', serif;
+}
+
+#headerText {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#headerText a {
+  color: white;
+}
+
+#headerText a:hover {
+  text-decoration: none;
+}
+
+
+input {
+  margin-top: 2em;
+} 
+
+.headers {
+  margin-top: 10px;
+}
+
+li {
+  font-size: 1.2em;
+}
+
+.mybutton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px;
+  width: 250px;
+  display: block; 
+  float: right;
+}
