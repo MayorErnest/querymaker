@@ -5,6 +5,8 @@ body {
 }
 
 #headerText {
+  position: sticky;
+  top: 0;
   font-weight: 700;
   cursor: pointer;
 }
@@ -37,4 +39,14 @@ li {
   width: 250px;
   display: block; 
   float: right;
+}
+
+.poppolls {
+  margin-top: 30px;
+}
+
+.pollquestions {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-left: 15px;
 }

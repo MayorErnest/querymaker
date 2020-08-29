@@ -5,7 +5,8 @@ class subApp extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        question: true
+        question: true,
+        polls: []
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleClick = this.handleClick.bind(this);
@@ -21,12 +22,17 @@ class subApp extends React.Component {
     }
   
     handleClick(event) {
-      this.setState((state)=>({question: !state.question}))
-      
+      if (event.target.id == "btn3") {
+        this.setState((state)=>({question: !state.question}))
+      }else {
+        this.setState((state)=>({question: !state.question, polls: [...state.polls, state.query]}))
+      }    
     }
+
+    handleClickaga
   
     handleNewClick(event) {
-      let listItems = document.querySelectorAll('li');
+      let listItems = document.querySelectorAll('ol > li');
       let len = listItems.length;
       let randomIndex = Math.floor((Math.random() * listItems.length));
       let randomElement = listItems[randomIndex];
@@ -81,8 +87,16 @@ class subApp extends React.Component {
           </ol>
           <p><button className="btn btn-success btn-lg"
                      onClick={this.handleNewClick}>Ask Again?</button></p>
-          <h1><button className="btn btn-outline-secondary btn-lg"
+          <h1><button className="btn btn-outline-secondary btn-lg" id="btn3"
                      onClick={this.handleClick}>Ask Another Question?</button></h1>
+          <div className="poppolls">
+            <h1>Popularity Polls</h1>
+            {
+              <div>
+                {this.state.polls.map((question)=><p className="pollquestions">{question}</p>)}
+              </div>
+            }
+          </div>
         </div>
       )
     }
